@@ -7,18 +7,20 @@ const url = require('url')
 let win
 
 function createWindow() {
-    win = new BrowserWindow ({ width: 800, height: 600 })
+    win = new BrowserWindow({ width: 1366, height: 768})
+    // win.maximize()
+    win.webContents.openDevTools()
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, '/components/index/index.html'),
         protocol: 'file',
         slashes: true
     }))
 }
 
 exports.openWindow = () => {
-    let newWin = new BrowserWindow ({ width: 400, height: 200 })
+    let newWin = new BrowserWindow({ width: 400, height: 200 })
     newWin.loadURL(url.format({
-        pathname: path.join(__dirname, 'enupal.html'),
+        pathname: path.join(__dirname, '/components/enupal/enupal.html'),
         protocol: 'file',
         slashes: true
     }))
